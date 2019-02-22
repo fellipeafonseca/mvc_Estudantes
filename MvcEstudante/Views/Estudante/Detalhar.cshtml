@@ -1,0 +1,88 @@
+﻿@model Model.Estudante
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Detalhar</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Estudante</legend>
+
+@{
+    try { 
+        <div class="display-label">
+            <div class="editor-field"> Cursos:
+                @Html.ListBoxFor(model => model.Curso, new MultiSelectList(ViewBag.Curso, "Codigo", "Nome"))
+
+            </div>
+        </div>
+}
+    catch
+    {
+        
+    }
+
+
+        }
+
+
+
+        <div class="display-field">
+            @Html.DisplayFor(model => model.AuxCodigos)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Nome)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Nome)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Senha)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Senha)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Email)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Email)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Codigo)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Codigo)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Idade)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Idade)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Sexo)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Sexo)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>
